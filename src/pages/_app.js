@@ -1,8 +1,8 @@
-import BaseLayout from '@/components/templates/BaseLayout'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'], weight: ['300'] })
-import 'antd/dist/reset.css'
+import BaseLayout from "@/components/templates/BaseLayout";
+import { Inter } from "next/font/google";
+import "@/styles/globals.css";
+const inter = Inter({ subsets: ["latin"], weight: ["300"] });
+import "antd/dist/reset.css";
 export default function App({ Component, pageProps }) {
   return (
     <main className={inter.className}>
@@ -14,5 +14,5 @@ export default function App({ Component, pageProps }) {
         </BaseLayout>
       )}
     </main>
-  )
+  );
 }

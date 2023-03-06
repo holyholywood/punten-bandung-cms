@@ -1,15 +1,13 @@
-import React from 'react'
-import { Layout, Space } from 'antd'
-import Sidebar from '../organisms/Sidebar'
+import React from "react";
+import Sidebar from "../organisms/Sidebar";
 
-const { Content } = Layout
 const BaseLayout = ({ children }) => {
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: "flex" }}>
       <Sidebar />
-      <div>{children}</div>
+      <div className="px-8 py-10 w-full">{children}</div>
     </div>
-  )
-}
+  );
+};
 
-export default BaseLayout
+export default BaseLayout;
