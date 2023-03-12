@@ -12,7 +12,6 @@ import Link from "next/link";
 const Sidebar = () => {
   const [current, setCurrent] = useState("home");
   const onClick = (e) => {
-    console.log("click ", e);
     setCurrent(e.key);
   };
   return (
@@ -42,13 +41,13 @@ const menuItems = [
     children: [
       {
         label: <Link href="/analytics/news">Berita</Link>,
-        key: "berita",
+        key: "analitik berita",
         icon: <CopyOutlined />,
       },
 
       {
-        label: "Ulasan",
-        key: <Link href="/analytics/review">ulasan</Link>,
+        label: <Link href="/analytics/review">ulasan</Link>,
+        key: "analitik ulasan",
         icon: <EyeOutlined />,
       },
     ],
@@ -64,8 +63,8 @@ const menuItems = [
         icon: <CopyOutlined />,
       },
       {
-        label: "Ulasan",
-        key: <Link href="/tabloids/review">ulasan</Link>,
+        label: <Link href="/tabloids/review">Ulasan</Link>,
+        key: "tabloid-ulasan",
         icon: <EyeOutlined />,
       },
     ],
