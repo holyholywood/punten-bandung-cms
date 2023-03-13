@@ -1,6 +1,8 @@
 import React from "react";
-import { Typography } from "antd";
+import { Typography, Button } from "antd";
 import Table from "@/components/atoms/Table";
+import { EditOutlined } from "@ant-design/icons";
+import Link from "next/link";
 const { Title } = Typography;
 const dataSource = [
   {
@@ -38,7 +40,14 @@ const columns = [
 const NewsPage = () => {
   return (
     <div>
-      <Title>NewsPage</Title>
+      <div className="flex justify-between items-center">
+        <Title>NewsPage</Title>
+        <Link href="/tabloids/news/write">
+          <Button primary icon={<EditOutlined />}>
+            Tulis
+          </Button>
+        </Link>
+      </div>
       <Table column={columns} data={dataSource} />
     </div>
   );
