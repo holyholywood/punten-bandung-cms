@@ -19,9 +19,9 @@ const Sidebar = () => {
       onClick={onClick}
       selectedKeys={[current]}
       items={menuItems}
-      style={{ width: "16rem", height: "100vh" }}
+      style={{ width: "16rem", height: "100vh", position: "sticky" }}
       mode="inline"
-      className="py-10"
+      className="py-10 left-0 top-0"
     />
   );
 };
