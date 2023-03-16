@@ -4,6 +4,7 @@ import React, { useReducer, useState } from "react";
 import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css";
 import TagPill from "@/components/atoms/TagPill";
+import Tabloid from "@/utils/API/Tabloid";
 const ReactQuill = dynamic(import("react-quill"), { ssr: false });
 const { Text, Title } = Typography;
 function reducer(state, action) {
@@ -57,6 +58,7 @@ const WriteNewsPage = () => {
       tags,
     };
     console.log(data);
+    console.log(Tabloid.store(data));
   };
   return (
     <div className="min-h-screen">

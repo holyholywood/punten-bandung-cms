@@ -2,7 +2,7 @@ import Fetch from ".";
 
 class TabloidModel {
   constructor() {
-    this.BASE_SLUG = NEXT_PUBLIC_BASE_TABLOID;
+    this.BASE_SLUG = process.env.NEXT_PUBLIC_BASE_TABLOID;
   }
   async get(slug = "") {
     try {
@@ -21,17 +21,21 @@ class TabloidModel {
     }
   }
 
-  async store(data) {
+  store(data) {
     if (!data) throw new Error("No Data Preserved");
+    const formData = new FormData();
 
     formData.append("title", data.title);
     formData.append("image", data.image);
     formData.append("body", data.body);
-    for (let i = 1; i <= data.tags.length - 1; i++) {
-      formData.append(`tag${i}`, data.tags[i - 1]);
-    }
+    formData.append("type", "berita");
+    // Append tag array to each  tag1-5
+    data.tags.forEach((tag, i) => {
+      formData.append(`tag${++i}`, tag);
+    });
     try {
-      return await Fetch.post(this.BASE_SLUG, data);
+      // return await Fetch.post(this.BASE_SLUG, formData);
+      return formData;
     } catch (error) {
       return error;
     }
